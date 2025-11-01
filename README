@@ -1,0 +1,102 @@
+# StaffGPT Frontend Guide
+
+This README contains a complete guide to setting up the StaffGPT frontend using Next.js 14, Redux Toolkit, Tailwind CSS, ShadCN/UI, and TypeScript.
+
+---
+
+## 1️⃣ Project Setup
+
+**Stack & Tools:**
+
+* Node.js 20+
+* Next.js 14 (App Router)
+* TypeScript
+* Redux Toolkit
+* Tailwind CSS
+* shadcn/ui
+* Axios for API requests
+* dotenv for environment variables
+
+**Installation Steps:**
+
+1. Create Next.js app with TypeScript.
+2. Install dependencies: Redux, Axios, Tailwind, shadcn/ui.
+3. Configure Tailwind (`tailwind.config.js`) to include `app/` and `components/`.
+
+**Environment Variables:**
+
+* `NEXT_PUBLIC_API_URL` — Backend API URL.
+
+---
+
+## 2️⃣ Directory Structure
+
+```
+app/
+├─ components/        # Reusable UI components (AgentCard, ChatWindow, ThreadList, etc.)
+├─ redux/             # Redux store and slices
+├─ pages/             # Next.js pages (login, dashboard, agents)
+├─ services/          # API request definitions
+├─ styles/            # Global CSS and Tailwind
+└─ utils/             # Helper functions
+```
+
+---
+
+## 3️⃣ Redux Setup
+
+* Use Redux Toolkit for state management.
+* Create slices for: `auth`, `agents`, `threads`, `marketplace`, `billing`.
+* Configure store and provide it via `Provider` in `_app.tsx`.
+
+---
+
+## 4️⃣ API Integration
+
+* Use Axios for all backend requests.
+* Centralize endpoints in `services/api.ts`.
+* Endpoints include login, register, agents, threads, marketplace, and billing.
+
+---
+
+## 5️⃣ Components Overview
+
+* **AgentCard:** Displays agent info.
+* **ChatWindow:** Shows messages per thread and allows sending messages.
+* **ThreadList:** Lists all threads of an agent.
+* **ProfileCard:** User profile and settings.
+* **FileUpload:** Uploads files for trait parsing.
+
+---
+
+## 6️⃣ Pages Overview
+
+* **index.tsx / login.tsx:** Landing and login pages.
+* **dashboard.tsx:** Overview of agents, threads, and marketplace.
+* **agents/[id].tsx:** Detailed agent view with chat and threads.
+
+---
+
+## 7️⃣ Tips & Best Practices
+
+* Keep components modular and reusable.
+* Connect Redux slices with API services cleanly.
+* Use Tailwind and shadcn/ui for consistent styling.
+* Separate configuration via `.env` for API URLs.
+* For chat threads, keep data scalable (avoid huge arrays in memory).
+
+---
+
+## 8️⃣ Next Steps
+
+1. Implement Redux slices and connect to backend endpoints.
+2. Build pages and components, hooking them to Redux.
+3. Integrate chat functionality with threads.
+4. Connect file upload and trait parsing.
+5. Integrate marketplace and agent cloning features.
+6. Optional: billing and subscription views.
+7. Test end-to-end with backend API.
+
+---
+
+This README provides a lightweight, practical overview of the frontend setup, pointing to files and folders without including full code snippets.
